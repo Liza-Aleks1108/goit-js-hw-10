@@ -96,3 +96,59 @@ button[data-start]:hover {
   font-size: 18px;
 
 }
+
+/* Стилі для 2-snackbar */
+.container {
+  display: flex;
+  justify-content: center;
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+form>label {
+  display: flex;
+  flex-direction: column;
+}
+
+input[name="delay"] {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  width: 360px;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #27292b;
+}
+
+fieldset {
+  box-sizing: border-box;
+  width: 360px;
+  height: 78px;
+  margin: 16px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 48px;
+}
+
+button[type=submit] {
+  font: 500 16px / 1.5 "Montserrat", sans-serif;
+  letter-spacing: 0.04em;
+  color: #fff;
+  width: 360px;
+  height: 40px;
+
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #4E75FF;
+  background-color: #395ebf;
+  font-family: "Montserrat", sans-serif;
+}
+
+button[type=submit]:hover {
+  background-color: #191970;
+}

@@ -9,7 +9,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 // Шукаємо input #datetime-picker та button,
 const datetimePicker = document.querySelector('#datetime-picker');
 const buttonEl = document.querySelector('button');
-buttonEl.disabled = false;
+buttonEl.disabled = true;
 
 // Посилання на елементи DOM для відображення значень таймера
 let daysEl = document.querySelector('[data-days]');
@@ -56,6 +56,7 @@ function startCountdown() {
     const ms = userSelectedDate - new Date();
     if (ms <= 0) {
       clearInterval(countdownInterval);
+      // buttonEl.disabled = false;
       return;
     }
     const { days, hours, minutes, seconds } = convertMs(ms);
