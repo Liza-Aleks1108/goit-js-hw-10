@@ -5,3 +5,94 @@
   |============================
 */
 @import url('./reset.css');
+
+/* Стилі для 1-timer */
+section {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.flex{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+a {
+  margin: 15px;
+}
+
+input#datetime-picker {
+  width: 272px;
+  height: 40px;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+
+  font-size: 24px;
+  color: #2E2F42;
+  text-align: center;
+}
+
+input#datetime-picker:disabled {
+  color: 2E2F42;
+  border-color: 2E2F42;
+}
+
+input#datetime-picker:hover {
+  border-color: black;
+}
+
+button[data-start] {
+  display: block;
+
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: #395ebf;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.06em;
+  color: white;
+  font-size: 24px;
+}
+
+button[data-start]:disabled {
+  background-color: lightgray;
+}
+
+button[data-start]:disabled:hover {
+  background-color: lightgray;
+}
+
+button[data-start]:hover {
+  background-color: #191970;
+}
+
+.timer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.value {
+  font-size: 40px;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 18px;
+
+}
