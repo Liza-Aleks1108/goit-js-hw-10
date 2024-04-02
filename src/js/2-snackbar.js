@@ -4,11 +4,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 // Шукаємо форму та її елементи
 const formEl = document.querySelector('.form');
-const delayEl = document.querySelector('input');
+const delayInput = formEl.querySelector('input[name="delay"]');
 
 function createPromise(event) {
   event.preventDefault();
-  const delay = parseFloat(delayEl.value);
+  const delay = parseInt(delayInput.value);
   const state = formEl.querySelector('input[name="state"]:checked').value;
 
   const promise = new Promise((resolve, reject) => {
@@ -16,21 +16,28 @@ function createPromise(event) {
     if (state === 'fulfilled') {
       setTimeout(() => {
         resolve(delay);
-        iziToast.show({
-          message: `✅ Fulfilled promise in ${delay}ms`,
-          position: 'topRight',
-        });
       }, delay);
     } else {
       setTimeout(() => {
         reject(delay);
-        iziToast.show({
-          message: `❌ Rejected promise in ${delay}ms`,
-          position: 'topRight',
-        });
       }, delay);
     }
   });
+
+  // Викликаємо iziToast у .then() або .catch() для відповідного стану промісу
+  promise
+    .then(delay => {
+      iziToast.show({
+        message: `✅ Fulfilled promise in ${delay}ms`,
+        position: 'topRight',
+      });
+    })
+    .catch(delay => {
+      iziToast.show({
+        message: `❌ Rejected promise in ${delay}ms`,
+        position: 'topRight',
+      });
+    });
 }
 
 // Додаємо слухача події на форму
