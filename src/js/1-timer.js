@@ -17,9 +17,8 @@ let hoursEl = document.querySelector('[data-hours]');
 let minutesEl = document.querySelector('[data-minutes]');
 let secondsEl = document.querySelector('[data-seconds]');
 
-// userSelectedDate, currentDate
+// userSelectedDate
 let userSelectedDate = new Date();
-let currentDate = new Date();
 
 // Options
 const options = {
@@ -36,6 +35,7 @@ const options = {
 
 // Перевіряємо, яку дату ввів користувач
 function checkSelectedDate() {
+  let currentDate = new Date();
   if (userSelectedDate.valueOf() < currentDate.valueOf()) {
     buttonEl.disabled = true;
     iziToast.show({
